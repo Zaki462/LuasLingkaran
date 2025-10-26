@@ -1,10 +1,10 @@
 /**
  * Kelas Circle merepresentasikan lingkaran dengan radius tertentu.
- * Kelas ini menyediakan fungsionalitas untuk menghitung luas lingkaran
- * dan menampilkan informasi tentang lingkaran.
+ * Kelas ini menyediakan fungsionalitas untuk menghitung luas lingkaran,
+ * keliling lingkaran, dan diameter lingkaran.
  *
  * @author Your Name
- * @version 1.0
+ * @version 1.1
  * @since 2025
  */
 public class Circle {
@@ -34,11 +34,32 @@ public class Circle {
     }
 
     /**
+     * Menghitung keliling lingkaran menggunakan rumus: 2 × π × r
+     * Menggunakan konstanta Math.PI untuk perhitungan yang akurat.
+     *
+     * @return keliling lingkaran dalam bentuk double
+     */
+    public double calculateCircumference() {
+        return 2 * Math.PI * getRadius();
+    }
+
+    /**
+     * Menghitung diameter lingkaran menggunakan rumus: 2 × r
+     *
+     * @return diameter lingkaran dalam bentuk double
+     */
+    public double calculateDiameter() {
+        return 2 * getRadius();
+    }
+
+    /**
      * Menampilkan informasi lengkap tentang lingkaran ke konsol.
-     * Informasi yang ditampilkan meliputi radius dan luas lingkaran.
+     * Informasi yang ditampilkan meliputi radius, diameter, keliling, dan luas lingkaran.
      */
     public void displayResult() {
         System.out.println("Radius: " + getRadius());
+        System.out.println("Diameter: " + calculateDiameter());
+        System.out.println("Circumference: " + calculateCircumference());
         getAreaString();
     }
 
@@ -51,8 +72,18 @@ public class Circle {
     }
 
     /**
+     * Membandingkan ukuran lingkaran ini dengan lingkaran lain.
+     *
+     * @param other lingkaran lain yang akan dibandingkan
+     * @return true jika lingkaran ini lebih besar, false jika tidak
+     */
+    public boolean isLargerThan(Circle other) {
+        return this.calculateArea() > other.calculateArea();
+    }
+
+    /**
      * Method main untuk menjalankan program dan mendemonstrasikan
-     * penggunaan kelas Circle dengan berbagai radius.
+     * penggunaan kelas Circle dengan berbagai radius dan fitur baru.
      *
      * @param args argumen command line (tidak digunakan dalam program ini)
      */
@@ -63,9 +94,16 @@ public class Circle {
         c.displayResult();
 
         // Simulasikan perubahan radius
-        c.setRadius(15.0);
+        c.setRadius(11.0);
         System.out.println("\n--- Updated Circle Calculation ---");
         c.displayResult();
+
+        // Demonstrasi fitur baru: perbandingan lingkaran
+        System.out.println("\n--- Circle Comparison ---");
+        Circle c2 = new Circle(12.0);
+        System.out.println("Circle 1 radius: " + c.getRadius());
+        System.out.println("Circle 2 radius: " + c2.getRadius());
+        System.out.println("Circle 1 is larger than Circle 2: " + c.isLargerThan(c2));
     }
 
     /**
