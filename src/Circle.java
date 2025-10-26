@@ -53,7 +53,7 @@ public class Circle {
     }
 
     /**
-     * Menampilkan informasi lengkap tentang lingkaran ke konsol.
+     * Menampilkan informasi lengkap tentang lingkaran ke konsoll.
      * Informasi yang ditampilkan meliputi radius, diameter, keliling, dan luas lingkaran.
      */
     public void displayResult() {
