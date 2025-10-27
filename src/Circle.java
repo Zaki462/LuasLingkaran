@@ -7,6 +7,7 @@
  * @version 1.1
  * @since 2025
  */
+//zaki
 public class Circle {
     /**
      * Radius lingkaran dalam satuan unit.
@@ -39,6 +40,7 @@ public class Circle {
      *
      * @return keliling lingkaran dalam bentuk double
      */
+    //Fitur baru
     public double calculateCircumference() {
         return 2 * Math.PI * getRadius();
     }
@@ -48,12 +50,13 @@ public class Circle {
      *
      * @return diameter lingkaran dalam bentuk double
      */
+    //Fitur baru
     public double calculateDiameter() {
         return 2 * getRadius();
     }
 
     /**
-     * Menampilkan informasi lengkap tentang lingkaran ke konsoll.
+     * Menampilkan informasi lengkap tentang lingkaran ke konsol.
      * Informasi yang ditampilkan meliputi radius, diameter, keliling, dan luas lingkaran.
      */
     public void displayResult() {
@@ -77,6 +80,7 @@ public class Circle {
      * @param other lingkaran lain yang akan dibandingkan
      * @return true jika lingkaran ini lebih besar, false jika tidak
      */
+    //Fitur baru
     public boolean isLargerThan(Circle other) {
         return this.calculateArea() > other.calculateArea();
     }
